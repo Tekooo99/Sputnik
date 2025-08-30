@@ -3,13 +3,13 @@
   <img src="https://img.shields.io/badge/Framework-PyTorch-purple?style=for-the-badge&logo=pytorch" alt="Framework Badge">
   <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python" alt="Language Badge">
   <img src="https://img.shields.io/badge/Paradigm-Vision--Language_Model-orange?style=for-the-badge&logo=openai" alt="Paradigm Badge">
-  <img src="https://img.shields.io/github/stars/cotix-ai/Aircraft-VLA?style=for-the-badge&color=gold" alt="Stars Badge">
+  <img src="https://img.shields.io/github/stars/cotix-ai/Sputnik?style=for-the-badge&color=gold" alt="Stars Badge">
 </div>
 
 <br>
 
 <h1 align="center">
-  Aircraft-VLA: 航空航天领域的 VLA 模型
+  Sputnik: 航空航天领域的 VLA 模型
 </h1>
 <p align="center">
 点击播放
@@ -46,9 +46,9 @@
 
 ## ✨ 项目简介
 
-本项目介绍了 **Aircraft-VLA**，一个新颖的视觉语言模型框架，它通过将最先进的视觉编码器（如 CLIP ViT）与强大的大型语言模型（如 Qwen2-VL）相结合，并注入一个包含数百个专业术语的结构化词汇表，显著提升了在航空航天领域的视觉理解能力。
+本项目介绍了 **Sputnik**，一个新颖的视觉语言模型框架，它通过将最先进的视觉编码器（如 CLIP ViT）与强大的大型语言模型（如 Qwen2-VL）相结合，并注入一个包含数百个专业术语的结构化词汇表，显著提升了在航空航天领域的视觉理解能力。
 
-**Aircraft-VLA** 重新定义了机器对飞行器的认知方式，将其视为一个由层级化组件、动态状态和标准化操作构成的复杂系统，而非简单的像素集合。它超越了传统VLA在专业领域“看图说话”的局限性（例如：只能识别“一架飞机”，无法区分“处于最终进近状态的空客A350，襟翼全放”）。本架构协同了通用视觉模型的强大表征能力与专业离散化Token的精确性，创造出一个高度专业和精确的系统，能够解析图像中的细微差别，并进行逻辑推理。
+**Sputnik** 重新定义了机器对飞行器的认知方式，将其视为一个由层级化组件、动态状态和标准化操作构成的复杂系统，而非简单的像素集合。它超越了传统VLA在专业领域“看图说话”的局限性（例如：只能识别“一架飞机”，无法区分“处于最终进近状态的空客A350，襟翼全放”）。本架构协同了通用视觉模型的强大表征能力与专业离散化Token的精确性，创造出一个高度专业和精确的系统，能够解析图像中的细微差别，并进行逻辑推理。
 
 <br>
 
@@ -56,7 +56,7 @@
 
 ## 💡 核心设计理念
 
-**Aircraft-VLA** 不仅仅是另一个通用VLA的微调版本，它代表了将领域知识深度注入AI模型的范式转变。我们相信，专业领域的下一次AI飞跃，需要系统能够使用该领域的“语言”进行思考和交流。
+**Sputnik** 不仅仅是另一个通用VLA的微调版本，它代表了将领域知识深度注入AI模型的范式转变。我们相信，专业领域的下一次AI飞跃，需要系统能够使用该领域的“语言”进行思考和交流。
 
 > "AI理解的未来在于从模糊的自然语言描述转向精确、结构化的领域符号体系。"
 
@@ -68,7 +68,7 @@
 
 ## 🧠 架构核心
 
-**Special Token词汇表** 是 **Aircraft-VLA** 架构的基石，也是整个理解与生成过程的“语义骨架”。该机制将模型从对连续视觉特征的模糊映射中解放出来，赋予其使用离散、精确的符号进行思考的能力。
+**Special Token词汇表** 是 **Sputnik** 架构的基石，也是整个理解与生成过程的“语义骨架”。该机制将模型从对连续视觉特征的模糊映射中解放出来，赋予其使用离散、精确的符号进行思考的能力。
 
 **核心功能:**
 系统通过一个三阶段的训练流程，让模型掌握这个新的“语言”：
@@ -84,7 +84,7 @@
 
 ## 🧩 核心组件详解
 
-**Aircraft-VLA** 中的不同组件各司其职，通过明确的训练分工，共同实现一个从“看见”到“理解”的智能流程。
+**Sputnik** 中的不同组件各司其职，通过明确的训练分工，共同实现一个从“看见”到“理解”的智能流程。
 
 ### 组件一：航空航天专业词汇表 (AeroSpace Vocabulary) (角色：知识基石)
 *   **目标:** 提供一个全面、层级化、标准化的符号系统，用于描述航空航天领域的一切视觉元素，从飞行器型号、具体部件到操作状态和飞行事件。
@@ -104,7 +104,7 @@
 
 ## 🔄 工作流程
 
-**Aircraft-VLA** 的训练遵循一个清晰的、迭代的流程，模拟了人类专家知识的构建过程：
+**Sputnik** 的训练遵循一个清晰的、迭代的流程，模拟了人类专家知识的构建过程：
 
 1.  **准备 (Preparation):** 首先，将 `special_tokens_vocab.py` 中的所有专业Token注入到基础VLA（如Qwen2-VL）的Tokenizer和词嵌入层中。
 2.  **阶段一：对齐 (Alignment):** 运行 `train_stage_1_alignment.py`。此阶段冻结LLM主体，仅训练视觉Projector和新Token的Embedding。目标是让模型将图像块与Token建立初步联系。
@@ -120,9 +120,9 @@
 
 尽管通用的VLA能够识别飞机，但它们仍然在“常识”层面运行。在**专业性、精确度和结构化理解**方面，仍有巨大的改进空间。
 
-**这正是 Aircraft-VLA 旨在深入探索和解决的方向。**
+**这正是 Sputnik 旨在深入探索和解决的方向。**
 
-**Aircraft-VLA** 通过其独特的 **专业词汇表注入与分阶段LoRA微调** 架构，提供了以下优势：
+**Sputnik** 通过其独特的 **专业词汇表注入与分阶段LoRA微调** 架构，提供了以下优势：
 
 *   **极高的信息密度:** 一个 `<op:flaps-landing>` Token比一句“飞机机翼后部的板子放下来用于着陆”的描述更精确、无歧义。
 *   **结构化理解能力:** 模型被引导去学习飞行器的组成结构和运行逻辑，而不仅仅是识别孤立的物体。
@@ -146,8 +146,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/cotix-ai/Aircraft-VLA.git
-cd Aircraft-VLA
+git clone https://github.com/cotix-ai/Sputnik.git
+cd Sputnik
 
 # 安装依赖
 pip install -r requirements.txt
@@ -181,4 +181,4 @@ accelerate launch train_stage_3_instruction_lora.py
 
 ## 🤝 如何贡献
 
-我们热烈欢迎对 **Aircraft-VLA** 项目的任何贡献！如果你有改进建议、发现了Bug，或是想扩充词汇表和数据集，请随时提交 Pull Request 或创建 Issue。
+我们热烈欢迎对 **Sputnik** 项目的任何贡献！如果你有改进建议、发现了Bug，或是想扩充词汇表和数据集，请随时提交 Pull Request 或创建 Issue。
